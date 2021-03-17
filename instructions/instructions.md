@@ -1,4 +1,4 @@
-# Practice Exam #1 - Free Wi-Fi in NYC
+# Practice Exam #1 - Social Network Data Harvesting
 
 A practice exam covering:
 
@@ -40,47 +40,47 @@ Rules about file names:
 
 ## The data
 
-You are given a data set in the file named [wifi.csv](../data/wifi.csv), which represents all publically available Wi-Fi hotspots in NYC. This data has been extracted and slightly modified from the [NYC Wi-Fi Hotspot Locations data set](https://data.cityofnewyork.us/City-Government/NYC-Wi-Fi-Hotspot-Locations/yjub-udmw), published by NYC Open Data.
+You are given a data set in the file named [users.csv](../data/users.csv), which contains information a about social network's users.
 
-You are also given a data set in the file named [neighborhood_populations.csv](../data/neighborhood_populations.csv), which contains the populations of each NYC neighborhood.
+You are also given a data set in the file named [advertising_rates.csv](../data/advertising_rates.csv), which contains information about the rates charged by the social network for advertisers interested in showing advertisements to the social network's users.
 
-### wifi.csv
+### users.csv
 
-The data in `wifi.csv` follows the structure indicated in the first few sample lines below, where the first line holds the field headers. See the full data in the file itself.
+The data in `users.csv` follows the structure indicated in the first few sample lines below, where the first line holds the field headers. See the full data in the file itself.
 
 ```csv
-id,borough_id,type,provider,name,location,latitude,longitude,x,y,location_t,remarks,city,ssid,source_id,activated,borocode,borough_name,nta_code,nta,council_district,postcode,boro_cd,census_tract,bctcb2010,bin,bbl,doitt_id,lat_lng
-9601,4,Free,SpotOnNetworks,QUEENS BRIDGE - JACOB A. RIIS Settlement House,10-25 41 AVENUE,40.755727,-73.9445830001,999603.226171,214613.274563,Indoor AP - Community Center - Computer Rm,Free - Up to 25 mbs Wi-Fi Service,Queens,Quensbridge Connected,NYC HOUSING AUTHORITY,05/01/2018,4,Queens,QN68,Queensbridge-Ravenswood-Long Island City,26,11101,401,25,25,4433386,4004700100,4746,"(40.755727, -73.9445830001)"
-9602,4,Free,SpotOnNetworks,QUEENS BRIDGE - JACOB A. RIIS Settlement House,10-43 41 AVENUE,40.7553329996,-73.9441310002,999728.543834,214469.807003,Indoor AP - Queens Public Library,Free - Up to 25 mbs Wi-Fi Service,Queens,Quensbridge Connected,NYC HOUSING AUTHORITY,05/01/2018,4,Queens,QN68,Queensbridge-Ravenswood-Long Island City,26,11101,401,25,25,4433386,4004700100,4747,"(40.7553329996, -73.9441310002)"
-9603,4,Free,SpotOnNetworks,QUEENS BRIDGE - JACOB A. RIIS Settlement House,10-05 41 AVENUE,40.7557510001,-73.9451659997,999441.701232,214621.916935,Indoor AP - North Management Office,Free - Up to 25 mbs Wi-Fi Service,Queens,Quensbridge Connected,NYC HOUSING AUTHORITY,05/01/2018,4,Queens,QN68,Queensbridge-Ravenswood-Long Island City,26,11101,401,25,25,4433386,4004700100,4748,"(40.7557510001, -73.9451659997)"
-9604,4,Free,SpotOnNetworks,QUEENS BRIDGE - JACOB A. RIIS Settlement House,10-05 41 AVENUE,40.7557510001,-73.9451659997,999441.701232,214621.916935,Indoor AP - North Management Office,Free - Up to 25 mbs Wi-Fi Service,Queens,Quensbridge Connected,NYC HOUSING AUTHORITY,05/01/2018,4,Queens,QN68,Queensbridge-Ravenswood-Long Island City,26,11101,401,25,25,4433386,4004700100,4749,"(40.7557510001, -73.9451659997)"
-9605,4,Free,SpotOnNetworks,QUEENS BRIDGE - JACOB A. RIIS Settlement House,10-05 41 AVENUE,40.7557510001,-73.9451659997,999441.701232,214621.916935,Indoor AP - North Maintenance Area,Free - Up to 25 mbs Wi-Fi Service,Queens,Quensbridge Connected,NYC HOUSING AUTHORITY,05/01/2018,4,Queens,QN68,Queensbridge-Ravenswood-Long Island City,26,11101,401,25,25,4433386,4004700100,4750,"(40.7557510001, -73.9451659997)"
+id,handle,first_name,last_name,email,street,city,state,gender_identity,real_food_affinity,luxury_brand_affinity,tech_gadget_affinity,travel_affinity,cost_per_impression
+1,vwykey0,Valerye,Wykey,vwykey0@ezinearticles.com,6 Surrey Avenue,Dallas,Texas,Male,0.45,0.41,0.75,0.77,10
+2,lbrundale1,Lucienne,Brundale,lbrundale1@bloomberg.com,993 New Castle Court,Tacoma,Washington,Genderfluid,0.92,0.45,0.87,0.34,5
+3,dbarthot2,Derrik,Barthot,dbarthot2@go.com,87 Grayhawk Road,Washington,District of Columbia,Non-binary,0.28,0.03,0.46,0.09,89
+4,shemphrey3,Sigfrid,Hemphrey,shemphrey3@yale.edu,14639 Elka Pass,Sacramento,California,Polygender,0.38,0.1,0.14,0.29,56
+5,nzoephel4,Norrie,Zoephel,nzoephel4@imgur.com,9315 Marcy Road,Van Nuys,California,Male,0.08,0.47,0.32,0.78,12
+6,eorring5,Erik,Orring,eorring5@etsy.com,02 Brickson Park Terrace,Albany,New York,Agender,0.82,0.36,0.71,0.64,87
 ```
 
 A few important fields in this data:
 
-- `id` - a unique identifier of each record
-- `type` - either `Free` for completely free hotspots, or `Limited Free` for Wi-Fi hotspots with limitations.
-- `provider` - the organization providing the Wi-Fi
-- `location` - where the hotspot is located
-- `remarks` - ad-hoc notes about the hotspot
-- `ssid` - the broadcast name that the hotspot shows up as when connecting via Wi-Fi
-- `borough_name` - the NYC Borough in which the hotspot is located
-- `nta_code` - the code of the neighborhood in which the hotspot is located
-- `nta` - the name of the neighborhood in which the hotspot is located
-- `postcode` - the zip code of the location of the hotspot
+- `id` - a unique integer, e.g. 1, 2, 3, etc.
+- `handle` - the user's username/handle
+- `first_name` - the user's first name
+- `last_name` - the user's last name
+- `email` - the user's email address
+- `street` - the user's street address
+- `city` - the user's city of residence
+- `state` - the user's state of residence
+- `gender_identity` - the user's gender identity, e.g Male, Female, Non-binary, Agender, Genderqueer, etc.
+- `real_food_affinity` - how likely the user is to click on an advertisement for "real" food, expressed as a number between 0 and 1.
+- `luxury_brand_affinity` - how likely the user is to click on an advertisement for luxury goods, expressed as a number between 0 and 1.
+- `tech_gadget_affinity` - how likely the user is to click on an advertisement for tech gadgets, expressed as a number between 0 and 1.
+- `travel_affinity` - how likely the user is to click on an advertisement for travel, expressed as a number between 0 and 1.
+- `cost_per_impression` - how much the social network charges an advertiser to show one advertisement to the user, measured in US cents.
 
-### neighborhood_populations.csv
+### advertising_rates.csv
 
-The data in `neighborhood_populations.csv` follows the structure indicated in the first few sample lines below, where the first line holds the field headers. See the full data in the file itself. This data has been sourced from NYC Open Data's [New York City Population By Neighborhood Tabulation Areas](https://data.cityofnewyork.us/City-Government/New-York-City-Population-By-Neighborhood-Tabulatio/swpk-hqdp/data) data set.
+The data in `advertising_rates.csv` follows the structure indicated in the first few sample lines below, where the first line holds the field headers. See the full data in the file itself.
 
 ```csv
-borough,year,fips_county_code,nta_code,nta,population
-Bronx,2000,5,BX01,Claremont-Bathgate,28149
-Bronx,2000,5,BX03,Eastchester-Edenwald-Baychester,35422
-Bronx,2000,5,BX05,Bedford Park-Fordham North,55329
-Bronx,2000,5,BX06,Belmont,25967
-Bronx,2000,5,BX07,Bronxdale,34309
+
 ```
 
 A few important fields in this data:
@@ -93,20 +93,20 @@ A few important fields in this data:
 
 ## Data munging
 
-Write a Python program into the file named [solution.py](../solution.py) to open the `wifi.csv` data file, munge the data according to the instructions below, and save the CSV data to a file named `wifi_clean.csv` within the `data` directory.
+Write a Python program into the file named [solution.py](../solution.py) to open the `users.csv` data file, munge the data according to the instructions below, and save the CSV data to a file named `users_clean.csv` within the `data` directory.
 
 ### Munging requirements
 
 In the file named `solution.py`, you will find the several function definitions that lack implementations. Complete each of the function definitions according to the comments within the file. At the end, if done correctly, this program will be able to:
 
-1. open the file named [wifi.csv](../data/wifi.csv) within the `data` directory.
+1. open the file named [users.csv](../data/users.csv) within the `data` directory.
 1. modify the data in the file, such that...
-   - any records with any blank `nta` or `nta_code` fields are removed
-   - any records with anything other than simply `Free` in the `type` field are removed (i.e. `Limited Free` should be removed)
-   - all `location` values are in Title Case.
-   - any `provider` with the misspelled name, `SpotOnNetworks`, is corrected to `Spot On Networks`
-1. save the modified data to a file named [wifi_clean.csv](../data/wifi_clean.csv), also within the `data` directory.
-1. open `wifi_clean.csv` and use the data therein to calculate and output the number of total number of free Wi-Fi hotspots in Fort Greene, Brooklyn.
+   - any records with any blank fields are removed
+   - any records with `United Kingdom` in the `state` field are removed
+   - any records with a `cost_per_impression` over $1 are removed
+   - any `email` address ending with `@dmoz.org` has this domain name replaced with `@dmoz.com` instead.
+1. save the modified data to a file named [users_clean.csv](../data/users_clean.csv), also within the `data` directory.
+1. open [users_clean.csv](../data/users_clean.csv) and output the average `cost_per_impression` of all the records in the cleaned data file.
 
 Rules and regulations:
 
