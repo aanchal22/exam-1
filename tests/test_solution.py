@@ -1,4 +1,4 @@
-from solution_1 import *
+from solution import *
 
 class Tests:
 

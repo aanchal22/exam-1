@@ -1,4 +1,4 @@
-# write your Python code here according to the instructions written in instructions/instructions-2.md
+# write your Python code here according to the instructions written in the instructions
 
 ## import the csv module
 import csv
