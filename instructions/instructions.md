@@ -13,7 +13,7 @@ A practice exam covering:
 
 There two parts to this exam. Please follow the instructions for each:
 
-1. A [companion Google Form](https://forms.gle/KMKDRWVFtHLTcpyr8) must be completed and submitted.
+1. A [companion Google Form](https://forms.gle/HuJScJGeis7MmUGA9) must be completed and submitted.
 1. The instructions below for work to be done within this repository.
 
 ## File and directory structure
