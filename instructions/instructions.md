@@ -75,7 +75,7 @@ A few important fields in this data:
 The data in `neighborhood_populations.csv` follows the structure indicated in the first few sample lines below, where the first line holds the field headers. See the full data in the file itself. This data has been sourced from NYC Open Data's [New York City Population By Neighborhood Tabulation Areas](https://data.cityofnewyork.us/City-Government/New-York-City-Population-By-Neighborhood-Tabulatio/swpk-hqdp/data) data set.
 
 ```csv
-borough,year,fips_county_code,nta_code,nta_name,population
+borough,year,fips_county_code,nta_code,nta,population
 Bronx,2000,5,BX01,Claremont-Bathgate,28149
 Bronx,2000,5,BX03,Eastchester-Edenwald-Baychester,35422
 Bronx,2000,5,BX05,Bedford Park-Fordham North,55329
