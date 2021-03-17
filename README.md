@@ -55,11 +55,11 @@ Place your second command here.
 2. Import the data in the `wifi.csv` and `neighborhood_populations.csv` CSV files into these two tables.
 
 ```sql
-Place your first command here.
+Place your first command(s) here.
 ```
 
 ```sql
-Place your second command here.
+Place your second command(s) here.
 ```
 
 3. Display the five zip codes with the most Wi-Fi hotspots and the number of Wi-Fi-hotspots in each in descending order of the number of Wi-Fi-hotspots.

@@ -106,7 +106,7 @@ In the file named `solution.py`, you will find the several function definitions 
    - all `location` values are in Title Case.
    - any `provider` with the misspelled name, `SpotOnNetworks`, is corrected to `Spot On Networks`
 1. save the modified data to a file named [wifi_clean.csv](../data/wifi_clean.csv), also within the `data` directory.
-1. open [wifi_clean.csv](../data/users_clean.csv) and use the data therein to calculate and output the number of total number of free Wi-Fi hotspots in Fort Greene, Brooklyn.
+1. open `wifi_clean.csv` and use the data therein to calculate and output the number of total number of free Wi-Fi hotspots in Fort Greene, Brooklyn.
 
 Rules and regulations:
 
@@ -118,9 +118,9 @@ Rules and regulations:
 
 ## Spreadsheets
 
-In the file named [wifi.xslx](../data/wifi.xslx) within the `data` directory, you will find the original data (not the cleaned version) has been imported for you into a spreadsheet file. Complete the tasks below within this file in the designated cells.
+In the file named [wifi.xlsx](../data/wifi.xlsx) within the `data` directory, you will find the original data (not the cleaned version) has been imported for you into a spreadsheet file. Complete the tasks below within this file in the designated cells.
 
-**Note**: All major spreadsheet applications can import and export in Microsoft Excel's `.xslx` file format. You are welcome to use any spreadsheet application of your choice. but your work must be saved in the `wifi.xslx` file within the `data` directory in Microsoft Excel format with the formulas used to calculate results intact and working.
+**Note**: All major spreadsheet applications can import and export in Microsoft Excel's `.xlsx` file format. You are welcome to use any spreadsheet application of your choice. but your work must be saved in the `wifi.xlsx` file within the `data` directory in Microsoft Excel format with the formulas used to calculate results intact and working.
 
 ### Spreadsheet analysis requirements
 
@@ -150,7 +150,7 @@ Write singular SQL commands that perform the following tasks.
 Each SQL command **must also be entered into the [README.md](../README.md) file** in the designated space.
 
 1. Write two SQL commands to create two tables named `hotspots` and `populations` within the given database file that can accommodate the data in the `wifi.csv` and `neighborhood_populations.csv` CSV data files, respectively. Use data types and primary key fields that make sense for the data.
-1. Import the data in the `wifi.csv` and `neighborhood_populations.csv` CSV files into these two tables.
+1. Import the data in the `wifi.csv` and `neighborhood_populations.csv` CSV files into these two tables. (You may use more than one command to achieve each of these imports, if necessary.)
 1. Display the five zip codes with the most Wi-Fi hotspots and the number of Wi-Fi-hotspots in each in descending order of the number of Wi-Fi-hotspots.
 1. Display a list of the name, address, and zip code for all of the free Wi-Fi locations provided by `Transit Wireless` in Manhattan, in ascending order of zip code.
 1. Display the names of each of the boroughs of NYC, and the number of free Wi-Fi hotspots in each.
