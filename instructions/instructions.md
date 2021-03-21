@@ -1,6 +1,6 @@
-# Practice Exam #1 - Free Wi-Fi in NYC
+# Exam #1 - Free Wi-Fi in NYC
 
-A practice exam covering:
+An exam covering:
 
 - Plain text data formats (CSV, JSON, XML)
 - Data munging in Python
