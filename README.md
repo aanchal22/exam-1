@@ -1,4 +1,4 @@
-# Practice Exam #1
+# Exam #1
 
 The solutions content of this file below will be updated according to [the instructions](instructions/instructions.md).
 
