@@ -1,6 +1,6 @@
-# Practice Exam #1 - Social Network Data Harvesting
+# Exam #1 - Social Network Data Harvesting
 
-A practice exam covering:
+An exam covering:
 
 - Plain text data formats (CSV, JSON, XML)
 - Data munging in Python
