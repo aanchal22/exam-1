@@ -2,6 +2,8 @@
 
 The solutions content of this file below will be updated according to [the instructions](instructions/instructions.md).
 
+**Make sure that all spreadsheet formulae and SQL commands you enter onto this page work exactly as written.**
+
 ## Solutions
 
 The following sections contain a report on the solutions to each of the required components of this exam.
