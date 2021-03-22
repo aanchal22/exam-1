@@ -14,7 +14,7 @@ The code in the Python program, [solution.py](solution.py), contains the solutio
 
 ### Spreadsheet analysis
 
-The spreadsheet file, [users.xslx](data/users.xslx), contains the solutions to the **spreadsheet analysis** part of this exam. In addition, the formulas used in that spreadsheet are indicated below:
+The spreadsheet file, [users.xlsx](./data/users.xlsx), contains the solutions to the **spreadsheet analysis** part of this exam. In addition, the formulas used in that spreadsheet are indicated below:
 
 1. Total number of users of the social network
 
