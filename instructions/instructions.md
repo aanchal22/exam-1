@@ -157,7 +157,7 @@ Each SQL command **must also be entered into the [README.md](../README.md) file*
 1. Display the number of wifi hotspots in Fort Greene, Brooklyn along with the population of Fort Greene, Brooklyn.
 1. Display the number of wifi hotspots in each of the 5 NYC boroughs, along with the population of each borough.
 1. Display the names of each of the neighborhoods in which there exist Wi-Fi hotspots, but for which we do not have population data.
-1. Write an additional SQL query of your choice using MySQL with this table; then describe the results
+1. Write an additional SQL query of your choice using SQL with this table; then describe the results
    - e.g. "This query identifies all of the Wi-Fi-hotspots in the zip codes where I live and where I go to school and gives me the name and address to find them."
 
 ## Data normalization & entity-relationship diagramming
