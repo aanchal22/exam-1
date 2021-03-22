@@ -2,7 +2,7 @@
 
 The solutions content of this file below will be updated according to [the instructions](instructions/instructions.md).
 
-**Make sure that all spreadsheet formulae and SQL commands you enter onto this page work exactly as written.**
+**Make sure that all spreadsheet formulae and SQL commands you enter onto this page work exactly as written, including semi-colons where necessary.**
 
 ## Solutions
 
