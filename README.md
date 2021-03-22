@@ -16,25 +16,25 @@ The code in the Python program, [solution.py](solution.py), contains the solutio
 
 The spreadsheet file, [wifi.xslx](data/wifi.xslx), contains the solutions to the **spreadsheet analysis** part of this exam. In addition, the formulas used in that spreadsheet are indicated below:
 
-1. Total number of free Wi-Fi hotspots in NYC
+1. Total number of users of the social network
 
 ```
 Place your formula here.
 ```
 
-2. Number of free Wi-Fi hotspots in each of the 5 boroughs of NYC.
+2. Number of users in each of the states in the New England region.
 
 ```
 Place your formula here.
 ```
 
-3. Number of free Wi-Fi hotspots provided by the Brooklyn Public Library in each of the zip codes of Brooklyn.
+3. Number of users in each of the 5 most populous cities of the USA.
 
 ```
 Place your formula for just the zip code 11201 here.
 ```
 
-4. The percent of all hotspots in Brooklyn that are provided by the Brooklyn Public Library.
+4. The average affinity category IDs of all users in New York for each of the content types.
 
 ```
 Place your formula here.

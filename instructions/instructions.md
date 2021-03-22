@@ -139,7 +139,7 @@ Each formula **must also be entered into the [README.md](../README.md) file** in
 1. Total number of users of the social network
 1. Number of users in each of the states in the New England region, which includes Connecticut, Maine, Massachusetts, New Hampshire, Rhode Island, and Vermont. (You are forbidden from hard-coding the names of the states into the formula you use. Rather, the formula should refer to the neighboring cells where the state names are written.)
 1. Number of users in each of the 5 most populous cities of the USA: New York City, New York; Los Angeles, California; Chicago, Illinois; Houston, Texas; and Phoenix, Arizona. Note that there may be cities in ohter states with the same names. (You are forbidden from hard-coding the cities or states into the formula you use. Rather, the formula should refer to the neighboring cells where that information is written.)
-1. The average affinity levels of all users in New York for each of the affinity categories. (You are forbidden from hard-coding the state name or any sum, count, or average values into the formula you use. Rather, these should be dynamically calculated within the formula using functions.)
+1. The average affinity category ID of all users in New York for each of the content types (e.g. real food, luxury brands, etc.). (You are forbidden from hard-coding the state name or any sum, count, or average values into the formula you use. Rather, these should be dynamically calculated within the formula using functions.)
 
 Be sure to save your work.
 
@@ -147,7 +147,7 @@ Be sure to save your work.
 
 ### Setup
 
-You have been given an empty SQLite database named `data.db` within the `data` directory.
+You have been given an empty SQLite database named `data.db` within the `data` directory. Store all your data in that file.
 
 ### SQL requirements
 
