@@ -32,12 +32,12 @@ def remove_rows_with_state(data, state):
     ## place your code here to complete this method according to the instructions above
 
 
-def remove_rows_under_affinity_level(data, affinity_type, threshold):
+def remove_rows_under_affinity_id_level(data, affinity_type, threshold):
     """
-    Removes any rows with a value in a given affinity field lower than the supplied threshold.
+    Removes any rows with a value in a given affinity category id field lower than the supplied threshold.
 
     :param data: The data, as a list of dictionaries
-    :param affinity_type: The type of affinity of interest...
+    :param affinity_type: The type of affinity category id of interest...
     :param threshold: The maximum acceptable value for this affinity type... records with lower values will be removed.
     :returns: The modified data, as a list of dictionaries
     """
@@ -66,12 +66,12 @@ def save_csv_data(data, filepath):
     ## place your code here to complete this method according to the instructions above
 
 
-def get_average_affinity_level(filepath, affinity_type):
+def get_average_affinity_id(data, affinity_type):
     """
-    Calculates the average cost per impression of all records in the data set.
+    Calculates the average affinity category id of all records in the data set.
 
     :param data: The data, as a list of dictionaries
-    :param affinity_type: The type of affinity of interest...
+    :param affinity_type: The type of affinity category id of interest...
     :returns: The average cost per impression of all records in the data set
     """
     ## place your code here to complete this method according to the instructions above
@@ -92,16 +92,15 @@ def main():
     # munge it
     data = remove_rows_with_blank_fields(data)
     data = remove_rows_with_state(data, 'United Kingdom')
-    data = remove_rows_under_affinity_level(data, 'real_food_affinity', 0.25)
+    data = remove_rows_under_affinity_id_level(data, 'real_food_affinity_category_id', 3)
     data = replace_email_domain(data, '@dmoz.org', '@dmoz.com')
 
     # dave to the new csv file
     save_csv_data(data, 'data/users_clean.csv')
 
     # print the average cost per impression from the data in the file
-    avg = get_average_affinity_level(data, 'real_food_affinity')
-    as_percent = format(100*0.543, '.0f') # the avg affinity as a percent, with no decimal places
-    print( 'The average affinity for real food is: {}%'.format(as_percent) ) # format number nicely
+    avg = get_average_affinity_id(data, 'real_food_affinity_category_id')
+    print( 'The average affinity id for real food is: {}.'.format(avg) ) # format string nicely
 
 if __name__ == "__main__":
     main()
