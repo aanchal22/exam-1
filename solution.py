@@ -21,21 +21,24 @@ def remove_rows_with_blank_fields(data):
     """
     ## place your code here to complete this method according to the instructions above
 
-def remove_rows_in_uk(data):
+def remove_rows_with_state(data, state):
     """
-    Removes any rows with 'United Kingdom' in the 'state' field.
+    Removes any rows with the given value in the 'state' field.
 
     :param data: The data, as a list of dictionaries
+    :param state: The state of interest, e.g 'United Kingdom' 
     :returns: The modified data, as a list of dictionaries
     """
     ## place your code here to complete this method according to the instructions above
 
 
-def remove_rows_over_one_dollar(data):
+def remove_rows_under_affinity_level(data, affinity_type, threshold):
     """
-    Removes any rows with a value higher than 100 in the 'cost_per_impression' field.
+    Removes any rows with a value in a given affinity field lower than the supplied threshold.
 
     :param data: The data, as a list of dictionaries
+    :param affinity_type: The type of affinity of interest...
+    :param threshold: The maximum acceptable value for this affinity type... records with lower values will be removed.
     :returns: The modified data, as a list of dictionaries
     """
     ## place your code here to complete this method according to the instructions above
@@ -63,11 +66,12 @@ def save_csv_data(data, filepath):
     ## place your code here to complete this method according to the instructions above
 
 
-def get_average_cost_per_impression(filepath):
+def get_average_affinity_level(filepath, affinity_type):
     """
     Calculates the average cost per impression of all records in the data set.
 
-    :param filepath: The file path of the CSV data file to open
+    :param data: The data, as a list of dictionaries
+    :param affinity_type: The type of affinity of interest...
     :returns: The average cost per impression of all records in the data set
     """
     ## place your code here to complete this method according to the instructions above
@@ -87,16 +91,17 @@ def main():
     
     # munge it
     data = remove_rows_with_blank_fields(data)
-    data = remove_rows_in_uk(data)
-    data = remove_rows_over_one_dollar(data)
+    data = remove_rows_with_state(data, 'United Kingdom')
+    data = remove_rows_under_affinity_level(data, 'real_food_affinity', 0.25)
     data = replace_email_domain(data, '@dmoz.org', '@dmoz.com')
 
     # dave to the new csv file
     save_csv_data(data, 'data/users_clean.csv')
 
     # print the average cost per impression from the data in the file
-    avg = get_average_cost_per_impression('data/users_clean.csv')
-    print('The average cost per impression is:', format(avg, '.0f'), 'cents') # format number nicely
+    avg = get_average_affinity_level(data, 'real_food_affinity')
+    as_percent = format(100*0.543, '.0f') # the avg affinity as a percent, with no decimal places
+    print( 'The average affinity for real food is: {}%'.format(as_percent) ) # format number nicely
 
 if __name__ == "__main__":
     main()

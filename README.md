@@ -100,7 +100,7 @@ Place your query here.
 Place your query here.
 ```
 
-9. Write an additional SQL query of your choice using MySQL with this table; then describe the results
+9. Write an additional SQL query of your choice using SQL with this table; then describe the results
 
 Write a description of the query here.
 

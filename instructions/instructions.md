@@ -42,20 +42,21 @@ Rules about file names:
 
 You are given a data set in the file named [users.csv](../data/users.csv), which contains information a about social network's users.
 
-You are also given a data set in the file named [advertising_rates.csv](../data/advertising_rates.csv), which contains information about the rates charged by the social network for advertisers interested in showing advertisements to the social network's users.
+You are also given a data set in the file named [affinity_categories.csv](../data/affinity_categories.csv), which contains information about the rates charged by the social network for advertisers interested in showing advertisements to users of various affinities.
+
+An **affinity** is a preference the visitor has shown for content of a particular type. Users express this preference by repeatedly clicking on content of that type, sharing content of that type with friends, and by spending more time viewing content of that type of content than other types. Affinities are measured from 0 to 1, representing no interest and absolute interest, respectively. Each user's behavior has been analyzed by the social network, and they have been assigned into several affinity categories based on their level of interest in each of the measured affinities. Affinity categories are quantized (meaning rounded) to the nearest 0.25.
 
 ### users.csv
 
 The data in `users.csv` follows the structure indicated in the first few sample lines below, where the first line holds the field headers. See the full data in the file itself.
 
 ```csv
-id,handle,first_name,last_name,email,street,city,state,gender_identity,real_food_affinity,luxury_brand_affinity,tech_gadget_affinity,travel_affinity,cost_per_impression
-1,vwykey0,Valerye,Wykey,vwykey0@ezinearticles.com,6 Surrey Avenue,Dallas,Texas,Male,0.45,0.41,0.75,0.77,10
-2,lbrundale1,Lucienne,Brundale,lbrundale1@bloomberg.com,993 New Castle Court,Tacoma,Washington,Genderfluid,0.92,0.45,0.87,0.34,5
-3,dbarthot2,Derrik,Barthot,dbarthot2@go.com,87 Grayhawk Road,Washington,District of Columbia,Non-binary,0.28,0.03,0.46,0.09,89
-4,shemphrey3,Sigfrid,Hemphrey,shemphrey3@yale.edu,14639 Elka Pass,Sacramento,California,Polygender,0.38,0.1,0.14,0.29,56
-5,nzoephel4,Norrie,Zoephel,nzoephel4@imgur.com,9315 Marcy Road,Van Nuys,California,Male,0.08,0.47,0.32,0.78,12
-6,eorring5,Erik,Orring,eorring5@etsy.com,02 Brickson Park Terrace,Albany,New York,Agender,0.82,0.36,0.71,0.64,87
+id,handle,first_name,last_name,email,street,city,state,gender_identity,real_food_affinity_category_id,luxury_brand_affinity_category_id,tech_gadget_affinity_category_id,travel_affinity_category_id
+1,vwykey0,Valerye,Wykey,vwykey0@ezinearticles.com,6 Surrey Avenue,Dallas,Texas,Male,1,7,9,14
+2,lbrundale1,Lucienne,Brundale,lbrundale1@bloomberg.com,993 New Castle Court,Tacoma,Washington,Genderfluid,3,5,10,16
+3,dbarthot2,Derrik,Barthot,dbarthot2@go.com,87 Grayhawk Road,Washington,District of Columbia,Non-binary,4,8,11,16
+4,shemphrey3,Sigfrid,Hemphrey,shemphrey3@yale.edu,14639 Elka Pass,Sacramento,California,Polygender,1,6,9,14
+5,nzoephel4,Norrie,Zoephel,nzoephel4@imgur.com,9315 Marcy Road,Van Nuys,California,Male,4,7,9,16
 ```
 
 A few important fields in this data:
@@ -68,28 +69,33 @@ A few important fields in this data:
 - `street` - the user's street address
 - `city` - the user's city of residence
 - `state` - the user's state of residence
-- `gender_identity` - the user's gender identity, e.g Male, Female, Non-binary, Agender, Genderqueer, etc.
-- `real_food_affinity` - how likely the user is to click on an advertisement for "real" food, expressed as a number between 0 and 1.
-- `luxury_brand_affinity` - how likely the user is to click on an advertisement for luxury goods, expressed as a number between 0 and 1.
-- `tech_gadget_affinity` - how likely the user is to click on an advertisement for tech gadgets, expressed as a number between 0 and 1.
-- `travel_affinity` - how likely the user is to click on an advertisement for travel, expressed as a number between 0 and 1.
-- `cost_per_impression` - how much the social network charges an advertiser to show one advertisement to the user, measured in US cents.
+- `state_animal` - the official animal of the state (Note: this is mock data, so you may see different animals mentioned as the same state's official animal - ignore these inconsistencies.)
+- `real_food_affinity_category_id` - a reference to this user's affinity category for real food. See the `affinity_categories` table for details.
+- `luxury_brand_affinity_category_id` - a reference to this user's affinity category for luxury brands. See the `affinity_categories` table for details.
+- `tech_gadget_affinity_category_id` - a reference to this user's affinity category for tech gadgets. See the `affinity_categories` table for details.
+- `travel_affinity_category_id` - a reference to this user's affinity category for travel. See the `affinity_categories` table for details.
 
-### advertising_rates.csv
+### affinity_categories.csv
 
-The data in `advertising_rates.csv` follows the structure indicated in the first few sample lines below, where the first line holds the field headers. See the full data in the file itself.
+The data in `affinity_categories.csv` follows the structure indicated in the first few sample lines below, where the first line holds the field headers. See the full data in the file itself.
 
 ```csv
-
+id,type,affinity,cost_per_impression,cost_per_thousand
+1,real_food_affinity,0,0.01,9.00
+2,real_food_affinity,0.25,0.02,18.00
+3,real_food_affinity,0.5,0.03,27.00
+4,real_food_affinity,0.75,0.04,36.00
+5,luxury_brand_affinity,0,0.01,9.00
+6,luxury_brand_affinity,0.25,0.02,18.00
 ```
 
 A few important fields in this data:
 
-- `borough` - the name of the NYC Borough within which this neighborhood is located
-- `year` - the year in which the population of this neighborhood was counted
-- `nta_code` - the code of the neighborhood, following the same codes as the `nta_code` field in the [wifi.csv](#wifi.csv) data set.
-- `nta` - the name of the neighborhood
-- `population` - the population of this neighborhood
+- `id` - a unique id for each affinity category
+- `affinity_type` - the type of affinity for which prices are given
+- `affinity` - the amount of affinity users in each category have for the type of content the record represents, measured from 0 to 1.
+- `cost_per_impression` - the price for showing one advertisement to a user who has been assigned this affinity category.
+- `cost_per_thousand` - the price for showing one advertisement to one thousand users who have been assigned this affinity category.
 
 ## Data munging
 
@@ -97,16 +103,16 @@ Write a Python program into the file named [solution.py](../solution.py) to open
 
 ### Munging requirements
 
-In the file named `solution.py`, you will find the several function definitions that lack implementations. Complete each of the function definitions according to the comments within the file. At the end, if done correctly, this program will be able to:
+In the file named `solution.py`, you will find several function definitions that lack implementations. Complete each of the function definitions according to the comments within the file. At the end, if done correctly, this program will be able to:
 
 1. open the file named [users.csv](../data/users.csv) within the `data` directory.
 1. modify the data in the file, such that...
    - any records with any blank fields are removed
    - any records with `United Kingdom` in the `state` field are removed
-   - any records with a `cost_per_impression` over $1 are removed
+   - any records with a `real_food_affinity` under 0.25 are removed
    - any `email` address ending with `@dmoz.org` has this domain name replaced with `@dmoz.com` instead.
 1. save the modified data to a file named [users_clean.csv](../data/users_clean.csv), also within the `data` directory.
-1. open [users_clean.csv](../data/users_clean.csv) and output the average `cost_per_impression` of all the records in the cleaned data file.
+1. open [users_clean.csv](../data/users_clean.csv) and output the average `real_food_affinity` of all the records in the cleaned data file.
 
 Rules and regulations:
 
@@ -118,9 +124,9 @@ Rules and regulations:
 
 ## Spreadsheets
 
-In the file named [wifi.xlsx](../data/wifi.xlsx) within the `data` directory, you will find the original data (not the cleaned version) has been imported for you into a spreadsheet file. Complete the tasks below within this file in the designated cells.
+In the file named [users.xlsx](../data/users.xlsx) within the `data` directory, you will find the original data (not the cleaned version) has been imported for you into a spreadsheet file. Complete the tasks below within this file in the designated cells.
 
-**Note**: All major spreadsheet applications can import and export in Microsoft Excel's `.xlsx` file format. You are welcome to use any spreadsheet application of your choice. but your work must be saved in the `wifi.xlsx` file within the `data` directory in Microsoft Excel format with the formulas used to calculate results intact and working.
+**Note**: All major spreadsheet applications can import and export in Microsoft Excel's `.xlsx` file format. You are welcome to use any spreadsheet application of your choice. but your work must be saved in the `users.xlsx` file within the `data` directory in Microsoft Excel format with the formulas used to calculate results intact and working.
 
 ### Spreadsheet analysis requirements
 
@@ -130,10 +136,10 @@ Perform the following calculations using **singular formulas** within the spread
 
 Each formula **must also be entered into the [README.md](../README.md) file** in the designated space.
 
-1. Total number of free Wi-Fi hotspots in NYC
-1. Number of free Wi-Fi hotspots in each of the 5 boroughs of NYC. (You are forbidden from hard-coding the names of the boroughs into the formula you use. Rather, the formula should refer to the neighboring cells where the borough names are written.)
-1. Number of free Wi-Fi hotspots provided by the Brooklyn Public Library in each of the zip codes of Brooklyn. (You are forbidden from hard-coding the zip codes into the formula you use. Rather, the formula should refer to the neighboring cells where the zip codes are written.)
-1. The percent of all hotspots in Brooklyn that are provided by the Brooklyn Public Library. (You are forbidden from hard-coding any sum or count values into the formula you use. Rather, these should be dynamically calculated within the formula using functions.)
+1. Total number of users of the social network
+1. Number of users in each of the states in the New England region, which includes Connecticut, Maine, Massachusetts, New Hampshire, Rhode Island, and Vermont. (You are forbidden from hard-coding the names of the states into the formula you use. Rather, the formula should refer to the neighboring cells where the state names are written.)
+1. Number of users in each of the 5 most populous cities of the USA: New York City, New York; Los Angeles, California; Chicago, Illinois; Houston, Texas; and Phoenix, Arizona. Note that there may be cities in ohter states with the same names. (You are forbidden from hard-coding the cities or states into the formula you use. Rather, the formula should refer to the neighboring cells where that information is written.)
+1. The average affinity levels of all users in New York for each of the affinity categories. (You are forbidden from hard-coding the state name or any sum, count, or average values into the formula you use. Rather, these should be dynamically calculated within the formula using functions.)
 
 Be sure to save your work.
 
@@ -149,23 +155,23 @@ Write singular SQL commands that perform the following tasks.
 
 Each SQL command **must also be entered into the [README.md](../README.md) file** in the designated space.
 
-1. Write two SQL commands to create two tables named `hotspots` and `populations` within the given database file that can accommodate the data in the `wifi.csv` and `neighborhood_populations.csv` CSV data files, respectively. Use data types and primary key fields that make sense for the data.
-1. Import the data in the `wifi.csv` and `neighborhood_populations.csv` CSV files into these two tables. (You may use more than one command to achieve each of these imports, if necessary.)
-1. Display the five zip codes with the most Wi-Fi hotspots and the number of Wi-Fi-hotspots in each in descending order of the number of Wi-Fi-hotspots.
-1. Display a list of the name, address, and zip code for all of the free Wi-Fi locations provided by `Transit Wireless` in Manhattan, in ascending order of zip code.
-1. Display the names of each of the boroughs of NYC, and the number of free Wi-Fi hotspots in each.
-1. Display the number of wifi hotspots in Fort Greene, Brooklyn along with the population of Fort Greene, Brooklyn.
-1. Display the number of wifi hotspots in each of the 5 NYC boroughs, along with the population of each borough.
-1. Display the names of each of the neighborhoods in which there exist Wi-Fi hotspots, but for which we do not have population data.
-1. Write an additional SQL query of your choice using MySQL with this table; then describe the results
-   - e.g. "This query identifies all of the Wi-Fi-hotspots in the zip codes where I live and where I go to school and gives me the name and address to find them."
+1. Write two SQL commands to create two tables named `users` and `affinity_categories` within the given database file that can accommodate the data in the `users.csv` and `affinity_categories.csv` CSV data files, respectively. Use data types and primary key fields that make sense for the data.
+1. Import the data in the `users.csv` and `affinity_categories.csv` CSV files into these two tables. (You may use more than one command to achieve each of these imports, if necessary.)
+1. Display the state name and the number of users in that state for each of the states for which we have users.
+1. Display the state name, the number of users in that state, and the average `real_food_affinity_category_id` for each of the states for which we have users.
+1. Display the email addresses only of all users residing in Oklahoma City, Oklahoma.
+1. Display the email addresses of all users residing in Oklahoma City, Oklahoma, along with the price the social network would charge an advertiser to show one advertisement to each of them.
+1. Display the amount the social network would charge an advertiser to show one advertisement to two thousand users with a `real_food_affinity` level of `0.5`.
+1. Show all the users for whom the `luxury_brand_affinity_category_id` field contains an invalid foreign key.
+1. Write an additional SQL query of your choice using SQL with this table; then describe the results
+   - e.g. "This query identifies all of the users with the first name Valerye in Idaho who have a strong affinity for both luxury brands and real food."
 
 ## Data normalization & entity-relationship diagramming
 
 Answer the following questions, and enter your responses into the `README.md` file in the designated spots.
 
-1. Is the data in `wifi.csv` in fourth normal form? Answer based only on those fields described in the [discussion of the data](#the-data) above. Ignore the others.
-1. Explain why or why not the `wifi.csv` data meets 4NF.
-1. Is the data in `neighborhood_populations.csv` in fourth normal form? Again, answer based only on those fields described in the discussion of the data above. Ignore the others.
-1. Explain why or why not the `neighborhood_populations.csv` data meets 4NF.
+1. Is the data in `users.csv` in fourth normal form? Answer based only on those fields described in the [discussion of the data](#the-data) above. Ignore any others.
+1. Explain why or why not the `users.csv` data meets 4NF.
+1. Is the data in `affinity_categories.csv` in fourth normal form? Again, answer based only on those fields described in the discussion of the data above. Ignore the others.
+1. Explain why or why not the `affinity_categories.csv` data meets 4NF.
 1. Use [draw.io](https://draw.io) to draw an Entity-Relationship Diagram showing a 4NF-compliant form of this data, including primary key field(s), relationship(s), and cardinality. Again, focus on and diagram only the attributes described in the discussion of data above. Ignore the others. Export the diagram as an `.svg` file into the `images` directory.
