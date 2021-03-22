@@ -1,4 +1,4 @@
-# Practice Exam #1
+# Exam #1
 
 The solutions content of this file below will be updated according to [the instructions](instructions/instructions.md).
 
@@ -14,7 +14,7 @@ The code in the Python program, [solution.py](solution.py), contains the solutio
 
 ### Spreadsheet analysis
 
-The spreadsheet file, [wifi.xslx](data/wifi.xslx), contains the solutions to the **spreadsheet analysis** part of this exam. In addition, the formulas used in that spreadsheet are indicated below:
+The spreadsheet file, [users.xslx](data/users.xslx), contains the solutions to the **spreadsheet analysis** part of this exam. In addition, the formulas used in that spreadsheet are indicated below:
 
 1. Total number of users of the social network
 
@@ -44,7 +44,7 @@ Place your formula here.
 
 This section shows the SQL queries that you determined solved each of the given problems.
 
-1. Write two SQL commands to create two tables named `hotspots` and `populations`.
+1. Write two SQL commands to create two tables named `users` and `affinity_categories` within the given database file.
 
 ```sql
 Place your first command here.
@@ -54,7 +54,7 @@ Place your first command here.
 Place your second command here.
 ```
 
-2. Import the data in the `wifi.csv` and `neighborhood_populations.csv` CSV files into these two tables.
+2. Import the data in the `users.csv` and `affinity_categories.csv` CSV files into these two tables.
 
 ```sql
 Place your first command(s) here.
@@ -64,37 +64,37 @@ Place your first command(s) here.
 Place your second command(s) here.
 ```
 
-3. Display the five zip codes with the most Wi-Fi hotspots and the number of Wi-Fi-hotspots in each in descending order of the number of Wi-Fi-hotspots.
+3. Display the state name and the number of users in that state for each of the states for which we have users.
 
 ```sql
 Place your query here.
 ```
 
-4. Display a list of the name, location, and zip code for all of the free Wi-Fi locations provided by `Transit Wireless` in Manhattan, in ascending order of zip code.
+4. Display the state name, the number of users in that state, and the average `real_food_affinity_category_id` for each of the states for which we have users.
 
 ```sql
 Place your query here.
 ```
 
-5. Display the names of each of the boroughs of NYC, and the number of free Wi-Fi hotspots in each.
+5. Display the email addresses only of all users residing in Oklahoma City, Oklahoma.
 
 ```sql
 Place your query here.
 ```
 
-6. Display the number of wifi hotspots in Fort Greene, Brooklyn along with the population of Fort Greene, Brooklyn.
+6. Display the email addresses of all users residing in Oklahoma City, Oklahoma, along with the price the social network would charge an advertiser to show one advertisement to each of them.
 
 ```sql
 Place your query here.
 ```
 
-7. Display the number of wifi hotspots in each of the 5 NYC boroughs, along with the population of each borough.
+7. Display the amount the social network would charge an advertiser to show one advertisement to two thousand users with a `real_food_affinity` level of `0.5`.
 
 ```sql
 Place your query here.
 ```
 
-8. Display the names of each of the neighborhoods in which there exist Wi-Fi hotspots, but for which we do not have population data.
+8. Show all the users for whom the `luxury_brand_affinity_category_id` field contains an invalid foreign key.
 
 ```sql
 Place your query here.
@@ -112,25 +112,25 @@ Place your query here.
 
 This section contains responses to the questions on normalization and entity-relationship diagramming.
 
-1. Is the data in `wifi.csv` in fourth normal form?
+1. Is the data in `users.csv` in fourth normal form?
 
 ```
 Enter your response here
 ```
 
-2. Explain why or why not the `wifi.csv` data meets 4NF.
+2. Explain why or why not the `users.csv` data meets 4NF.
 
 ```
 Enter your response here
 ```
 
-3. Is the data in `neighborhood_populations.csv` in fourth normal form?
+3. Is the data in `affinity_categories.csv` in fourth normal form?
 
 ```
 Enter your response here
 ```
 
-4. Explain why or why not the `neighborhood_populations.csv` data meets 4NF.
+4. Explain why or why not the `affinity_categories.csv` data meets 4NF.
 
 ```
 Enter your response here
