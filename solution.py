@@ -39,7 +39,7 @@ def remove_rows_under_affinity_id_level(data, affinity_type, threshold):
 
     :param data: The data, as a list of dictionaries
     :param affinity_type: The type of affinity category id of interest...
-    :param threshold: The maximum acceptable value for this affinity type... records with lower values will be removed.
+    :param threshold: The maximum acceptable id value for this affinity type... records with lower values will be removed.
     :returns: The modified data, as a list of dictionaries
     """
     ## place your code here to complete this method according to the instructions above
@@ -73,7 +73,7 @@ def get_average_affinity_id(data, affinity_type):
 
     :param data: The data, as a list of dictionaries
     :param affinity_type: The type of affinity category id of interest...
-    :returns: The average cost per impression of all records in the data set
+    :returns: The average affinity id for the given affinity_type
     """
     ## place your code here to complete this method according to the instructions above
 
@@ -93,7 +93,7 @@ def main():
     # munge it
     data = remove_rows_with_blank_fields(data)
     data = remove_rows_with_state(data, 'United Kingdom')
-    data = remove_rows_under_affinity_id_level(data, 'real_food_affinity_category_id', 0.25)
+    data = remove_rows_under_affinity_id_level(data, 'real_food_affinity_category_id', 2)
     data = replace_email_domain(data, '@dmoz.org', '@dmoz.com')
 
     # dave to the new csv file
