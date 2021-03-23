@@ -84,7 +84,7 @@ Place your query here.
 Place your query here.
 ```
 
-6. Display the email addresses of all users residing in Oklahoma City, Oklahoma, along with the price the social network would charge an advertiser to show one advertisement to each of them.
+6. 1. Display the email addresses of all users residing in Oklahoma City, Oklahoma, along with the price the social network would charge an advertiser to show one advertisement to each of them, based on their `real_food_affinity` level.
 
 ```sql
 Place your query here.
