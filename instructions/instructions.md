@@ -109,10 +109,10 @@ In the file named `solution.py`, you will find several function definitions that
 1. modify the data in the file, such that...
    - any records with any blank fields are removed
    - any records with `United Kingdom` in the `state` field are removed
-   - any records with a `real_food_affinity_category_id` value of 2 or below are removed
+   - any records with a `real_food_affinity` under 0.25 are removed
    - any `email` address ending with `@dmoz.org` has this domain name replaced with `@dmoz.com` instead.
 1. save the modified data to a file named [users_clean.csv](../data/users_clean.csv), also within the `data` directory.
-1. open [users_clean.csv](../data/users_clean.csv) and output the average `real_food_affinity_category_id` value of all the records in the cleaned data file.
+1. output the average `real_food_affinity_category_id` value of all the records in the cleaned data.
 
 Rules and regulations:
 
