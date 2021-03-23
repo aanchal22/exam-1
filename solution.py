@@ -99,7 +99,7 @@ def main():
     # dave to the new csv file
     save_csv_data(data, 'data/users_clean.csv')
 
-    # print the average cost per impression from the data in the file
+    # print the average affinity level for real food
     avg = get_average_affinity_id(data, 'real_food_affinity_category_id')
     print( 'The average affinity id for real food is: {}.'.format(avg) ) # format string nicely
 
