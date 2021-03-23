@@ -160,7 +160,7 @@ Each SQL command **must also be entered into the [README.md](../README.md) file*
 1. Display the state name and the number of users in that state for each of the states for which we have users.
 1. Display the state name, the number of users in that state, and the average `real_food_affinity_category_id` for each of the states for which we have users.
 1. Display the email addresses only of all users residing in Oklahoma City, Oklahoma.
-1. Display the email addresses of all users residing in Oklahoma City, Oklahoma, along with the price the social network would charge an advertiser to show one advertisement to each of them, based on their `real_food_affinity` value.
+1. Display the email addresses of all users residing in Oklahoma City, Oklahoma, along with the price the social network would charge an advertiser to show one advertisement to each of them, based on their `real_food_affinity` level.
 1. Display the amount the social network would charge an advertiser to show one advertisement to two thousand users with a `real_food_affinity` level of `0.5`.
 1. Show all the users for whom the `luxury_brand_affinity_category_id` field contains an invalid foreign key.
 1. Write an additional SQL query of your choice using SQL with this table; then describe the results
