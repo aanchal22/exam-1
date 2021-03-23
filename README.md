@@ -2,8 +2,6 @@
 
 The solutions content of this file below will be updated according to [the instructions](instructions/instructions.md).
 
-**Make sure that all spreadsheet formulae and SQL commands you enter onto this page work exactly as written, including semi-colons where necessary.**
-
 ## Solutions
 
 The following sections contain a report on the solutions to each of the required components of this exam.
@@ -15,6 +13,8 @@ The code in the Python program, [solution.py](solution.py), contains the solutio
 ### Spreadsheet analysis
 
 The spreadsheet file, [users.xlsx](./data/users.xlsx), contains the solutions to the **spreadsheet analysis** part of this exam. In addition, the formulas used in that spreadsheet are indicated below:
+
+**Make sure that all spreadsheet formulae you enter into this document work exactly as written.**
 
 1. Total number of users of the social network
 
@@ -31,7 +31,7 @@ Place your formula here.
 3. Number of users in each of the 5 most populous cities of the USA.
 
 ```
-Place your formula for just the zip code 11201 here.
+Place your formula here.
 ```
 
 4. The average affinity category IDs of all users in New York for each of the content types.
@@ -43,6 +43,8 @@ Place your formula here.
 ### SQL queries
 
 This section shows the SQL queries that you determined solved each of the given problems.
+
+**Make sure that all SQL commands you enter into this document work exactly as written, including semi-colons, where necessary.**
 
 1. Write two SQL commands to create two tables named `users` and `affinity_categories` within the given database file.
 

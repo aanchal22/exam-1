@@ -6,7 +6,8 @@ import csv
 def get_csv_data(filepath):
     """
     Opens the file at filepath, reads the data using the csv module's DictReader, 
-    converts that data to a regular list and returns that list.
+    converts that data to a regular list containing a dictionary for each row of data in the CSV file
+    and returns that list.
 
     :param filepath: The file path of the CSV data file to open
     :returns: A list of dictionaries, where each dictionary represents one row from the file
@@ -14,7 +15,7 @@ def get_csv_data(filepath):
 
 def remove_rows_with_blank_fields(data):
     """
-    Removes any rows with one or more blank fields from the data set
+    Removes any rows with one or more blank fields from the data set.
 
     :param data: The data, as a list of dictionaries
     :returns: The modified data, as a list of dictionaries
@@ -26,7 +27,7 @@ def remove_rows_with_state(data, state):
     Removes any rows with the given value in the 'state' field.
 
     :param data: The data, as a list of dictionaries
-    :param state: The state of interest, e.g 'United Kingdom' 
+    :param state: The state value of interest, e.g 'United Kingdom' 
     :returns: The modified data, as a list of dictionaries
     """
     ## place your code here to complete this method according to the instructions above
@@ -92,7 +93,7 @@ def main():
     # munge it
     data = remove_rows_with_blank_fields(data)
     data = remove_rows_with_state(data, 'United Kingdom')
-    data = remove_rows_under_affinity_id_level(data, 'real_food_affinity_category_id', 3)
+    data = remove_rows_under_affinity_id_level(data, 'real_food_affinity_category_id', 0.25)
     data = replace_email_domain(data, '@dmoz.org', '@dmoz.com')
 
     # dave to the new csv file
