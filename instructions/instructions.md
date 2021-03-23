@@ -51,12 +51,12 @@ An **affinity** is a preference the visitor has shown for content of a particula
 The data in `users.csv` follows the structure indicated in the first few sample lines below, where the first line holds the field headers. See the full data in the file itself.
 
 ```csv
-id,handle,first_name,last_name,email,street,city,state,gender_identity,real_food_affinity_category_id,luxury_brand_affinity_category_id,tech_gadget_affinity_category_id,travel_affinity_category_id
-1,vwykey0,Valerye,Wykey,vwykey0@ezinearticles.com,6 Surrey Avenue,Dallas,Texas,Male,1,7,9,14
-2,lbrundale1,Lucienne,Brundale,lbrundale1@bloomberg.com,993 New Castle Court,Tacoma,Washington,Genderfluid,3,5,10,16
-3,dbarthot2,Derrik,Barthot,dbarthot2@go.com,87 Grayhawk Road,Washington,District of Columbia,Non-binary,4,8,11,16
-4,shemphrey3,Sigfrid,Hemphrey,shemphrey3@yale.edu,14639 Elka Pass,Sacramento,California,Polygender,1,6,9,14
-5,nzoephel4,Norrie,Zoephel,nzoephel4@imgur.com,9315 Marcy Road,Van Nuys,California,Male,4,7,9,16
+id,handle,first_name,last_name,email,street,city,state,state_animal,real_food_affinity_category_id,luxury_brand_affinity_category_id,tech_gadget_affinity_category_id,travel_affinity_category_id
+1,vwykey0,Valerye,Wykey,vwykey0@ezinearticles.com,6 Surrey Avenue,Dallas,Texas,Giant anteater,1,7,9,14
+2,lbrundale1,Lucienne,Brundale,lbrundale1@bloomberg.com,993 New Castle Court,Tacoma,Washington,Caracara (unidentified),3,5,10,16
+3,dbarthot2,Derrik,Barthot,dbarthot2@go.com,87 Grayhawk Road,Washington,District of Columbia,"Squirrel, grey-footed",4,8,11,16
+4,shemphrey3,Sigfrid,Hemphrey,shemphrey3@yale.edu,14639 Elka Pass,Sacramento,California,"Goose, egyptian",1,6,9,14
+5,nzoephel4,Norrie,Zoephel,nzoephel4@imgur.com,9315 Marcy Road,Van Nuys,California,"Turtle, eastern box",4,7,9,16
 ```
 
 A few important fields in this data:
