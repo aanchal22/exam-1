@@ -29,4 +29,4 @@ class Tests:
         codes = soup.find_all('code')
 
         logger.warning(soup)
-        assert len(codes) == 28
+        assert len(codes) == 32
