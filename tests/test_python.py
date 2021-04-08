@@ -89,30 +89,27 @@ class Tests:
     assert count == 0
 
   def test_remove_rows_under_affinity_id_level_shape(self, affinity_type):
-    threshold = int(random.choice(
-      expected_users_df_non_null[~expected_users_df_non_null[affinity_type].isnull()][affinity_type].unique()))
+    threshold = int(random.choice(expected_users_df_non_null[affinity_type].unique()))
     actual_users_data_removed_affinity_threshold = remove_rows_under_affinity_id_level(expected_users_data_non_null,
                                                                                        affinity_type, threshold)
     expected_users_df_non_null[affinity_type] = expected_users_df_non_null[affinity_type].astype(int)
     expected_users_df_removed_affinity_threshold = expected_users_df_non_null[
-      expected_users_df_non_null[affinity_type] < threshold]
+      expected_users_df_non_null[affinity_type] >= threshold]
     # print(affinity_type, threshold)
 
     assert actual_users_data_removed_affinity_threshold != None
-    assert len(actual_users_data_removed_affinity_threshold) == expected_users_df_removed_affinity_threshold.shape[
-      0]
+    assert len(actual_users_data_removed_affinity_threshold) == expected_users_df_removed_affinity_threshold.shape[0]
     assert all([len(x) == expected_users_df_removed_affinity_threshold.shape[1] for x in
                 actual_users_data_removed_affinity_threshold])
 
   def test_remove_rows_under_affinity_id_level_value(self, affinity_type):
-    threshold = int(random.choice(
-      expected_users_df_non_null[~expected_users_df_non_null[affinity_type].isnull()][affinity_type].unique()))
+    threshold = int(random.choice(expected_users_df_non_null[affinity_type].unique()))
     actual_users_data_removed_affinity_threshold = remove_rows_under_affinity_id_level(expected_users_data_non_null,
                                                                                        affinity_type, threshold)
 
     count = 0
     for record in actual_users_data_removed_affinity_threshold:
-      if int(record[affinity_type]) >= threshold:
+      if int(record[affinity_type]) < threshold:
         count += 1
     assert actual_users_data_removed_affinity_threshold != None
     assert count == 0
@@ -144,4 +141,3 @@ class Tests:
     expected_affinity_average = expected_users_df_non_null[affinity_type].mean()
     assert actual_users_data_affinity_average != None
     assert actual_users_data_affinity_average == expected_affinity_average
-
