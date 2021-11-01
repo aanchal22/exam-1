@@ -14,7 +14,8 @@ The code in the Python program, [solution.py](solution.py), contains the solutio
 
 The spreadsheet file, [users.xlsx](./data/users.xlsx), contains the solutions to the **spreadsheet analysis** part of this exam. In addition, the formulas used in that spreadsheet are indicated below:
 
-**Make sure that all spreadsheet formulae you enter into this document work exactly as written.**
+- abide by [the instructions](./instructions/instructions.md#entering-respones-into-the-readme-file) for how to enter responses into this file correctly.
+- **Make sure that all spreadsheet formulae you enter into this document work exactly as written.**
 
 1. Total number of users of the social network
 
@@ -44,7 +45,8 @@ Place your formula here.
 
 This section shows the SQL queries that you determined solved each of the given problems.
 
-**Make sure that all SQL commands you enter into this document work exactly as written, including semi-colons, where necessary.**
+- abide by [the instructions](./instructions/instructions.md#entering-respones-into-the-readme-file) for how to enter responses into this file correctly.
+- **Make sure that all SQL commands you enter into this document work exactly as written, including semi-colons, where necessary.**
 
 1. Write two SQL commands to create two tables named `users` and `affinity_categories` within the given database file.
 
@@ -113,6 +115,8 @@ Place your query here.
 ### Normalization and Entity-relationship diagramming
 
 This section contains responses to the questions on normalization and entity-relationship diagramming.
+
+- abide by [the instructions](./instructions/instructions.md#entering-respones-into-the-readme-file) for how to enter responses into this file correctly.
 
 1. Is the data in `users.csv` in fourth normal form?
 
