@@ -22,13 +22,13 @@ The spreadsheet file, [users.xlsx](./data/users.xlsx), contains the solutions to
 Place your formula here.
 ```
 
-2. Number of users in each of the states in the New England region.
+2. Number of users in each of the states in the Pacific sub-region, which includes Alaska, California, Hawaii, Oregon and Washington.
 
 ```
 Place your formula here.
 ```
 
-3. Number of users in each of the 5 most populous cities of the USA.
+3. Number of users in each of the given 5 cities of the USA: Nashville, Tennessee; San Diego, California; New York City, New York; Dallas, Texas; and Seattle, Washington.
 
 ```
 Place your formula here.
@@ -72,31 +72,31 @@ Place your second command(s) here.
 Place your query here.
 ```
 
-4. Display the state name, the number of users in that state, and the average `real_food_affinity_category_id` for each of the states for which we have users.
+4. Display the state name, the number of users in that state, and the average `travel_affinity_category_id` for each of the states for which we have users.
 
 ```sql
 Place your query here.
 ```
 
-5. Display the email addresses only of all users residing in Oklahoma City, Oklahoma.
+5. Display the email addresses only of all users residing in Pittsburgh, Pennsylvania.
 
 ```sql
 Place your query here.
 ```
 
-6. 1. Display the email addresses of all users residing in Oklahoma City, Oklahoma, along with the price the social network would charge an advertiser to show one advertisement to each of them, based on their `real_food_affinity` level.
+6. Display the email addresses of all users residing in Pittsburgh, Pennsylvania, along with the price the social network would charge an advertiser to show one advertisement to each of them, based on their `travel_affinity` level.
 
 ```sql
 Place your query here.
 ```
 
-7. Display the amount the social network would charge an advertiser to show one advertisement to two thousand users with a `real_food_affinity` level of `0.5`.
+7. Display the amount the social network would charge an advertiser to show two advertisement to three thousand users with a `real_food_affinity` level of `0.75`.
 
 ```sql
 Place your query here.
 ```
 
-8. Show all the users for whom the `luxury_brand_affinity_category_id` field contains an invalid foreign key.
+8. Show all the users for whom the `tech_gadget_affinity_category_id` field contains an invalid foreign key.
 
 ```sql
 Place your query here.

@@ -13,7 +13,7 @@ An exam covering:
 
 There two parts to this exam. Please follow the instructions for each:
 
-1. A [companion Google Form](https://forms.gle/e6JjZZZ6Zcn3S6kv8) must be completed and submitted.
+1. A companion Google Form must be completed and submitted. The link to this will be supplied separately.
 1. The instructions below for work to be done within this repository.
 
 ## File and directory structure
@@ -27,7 +27,7 @@ The purpose of each directory in this repository:
 - `data` - must hold all data files. This includes any plain text data files, any spreadsheet files, and any database files.
 - `images` - must hold any images file displayed in the documents you will write. Your documents will display these images by using standard Markdown syntax.
 - `instructions` - contains instructions for this exam.
-- `tests` - contains automated tests that the instructors will use to check basic attributes of your work to make sure it has been done correctly. Do not touch this directory!
+- `tests` - contains system files we will use to monitor your work. Do not touch this directory!
 
 ### File names
 
@@ -107,12 +107,12 @@ In the file named `solution.py`, you will find several function definitions that
 
 1. open the file named [users.csv](../data/users.csv) within the `data` directory.
 1. modify the data in the file, such that...
-   - any records with any blank fields are removed
-   - any records with `United Kingdom` in the `state` field are removed
-   - any records with a `real_food_affinity` under 0.25 are removed
+   - any records with any fields set to `NULL` are removed. (Just the string `'NULL'`, not `null` or `nil`.)
+   - any records with invalid handles are removed. Invalid handles are non-alphanumeric handles, they contain atleast one character that is not an alphabet or a number (handles with special characters such as `*`, `^`, `&` etc. are not allowed).
+   - any records with a `tech_gadget_affinity` more than 10 are removed
    - any `email` address ending with `@dmoz.org` has this domain name replaced with `@dmoz.com` instead.
 1. save the modified data to a file named [users_clean.csv](../data/users_clean.csv), also within the `data` directory.
-1. output the average `real_food_affinity_category_id` value of all the records in the cleaned data.
+1. output the average and median `tech_gadget_affinity_category_id` value of all the records in the cleaned data.
 
 Rules and regulations:
 
@@ -137,8 +137,8 @@ Perform the following calculations using **singular formulas** within the spread
 Each formula **must also be entered into the [README.md](../README.md) file** in the designated space.
 
 1. Total number of users of the social network
-1. Number of users in each of the states in the New England region, which includes Connecticut, Maine, Massachusetts, New Hampshire, Rhode Island, and Vermont. (You are forbidden from hard-coding the names of the states into the formula you use. Rather, the formula should refer to the neighboring cells where the state names are written.)
-1. Number of users in each of the 5 most populous cities of the USA: New York City, New York; Los Angeles, California; Chicago, Illinois; Houston, Texas; and Phoenix, Arizona. Note that there may be cities in ohter states with the same names. (You are forbidden from hard-coding the cities or states into the formula you use. Rather, the formula should refer to the neighboring cells where that information is written.)
+1. Number of users in each of the states in the Pacific sub-region, which includes Alaska, California, Hawaii, Oregon and Washington. (You are forbidden from hard-coding the names of the states into the formula you use. Rather, the formula should refer to the neighboring cells where the state names are written.)
+1. Number of users in each of the given 5 cities of the USA: Nashville, Tennessee; San Diego, California; New York City, New York; Dallas, Texas; and Seattle, Washington. Note that there may be cities in ohter states with the same names. (You are forbidden from hard-coding the cities or states into the formula you use. Rather, the formula should refer to the neighboring cells where that information is written.)
 1. The average affinity category ID of all users in New York for each of the content types (e.g. real food, luxury brands, etc.). (You are forbidden from hard-coding the state name or any sum, count, or average values into the formula you use. Rather, these should be dynamically calculated within the formula using functions.)
 
 Be sure to save your work.
@@ -158,11 +158,11 @@ Each SQL command **must also be entered into the [README.md](../README.md) file*
 1. Write two SQL commands to create two tables named `users` and `affinity_categories` within the given database file that can accommodate the data in the `users.csv` and `affinity_categories.csv` CSV data files, respectively. Use data types and primary key fields that make sense for the data.
 1. Import the data in the `users.csv` and `affinity_categories.csv` CSV files into these two tables. (You may use more than one command to achieve each of these imports, if necessary.)
 1. Display the state name and the number of users in that state for each of the states for which we have users.
-1. Display the state name, the number of users in that state, and the average `real_food_affinity_category_id` for each of the states for which we have users.
-1. Display the email addresses only of all users residing in Oklahoma City, Oklahoma.
-1. Display the email addresses of all users residing in Oklahoma City, Oklahoma, along with the price the social network would charge an advertiser to show one advertisement to each of them, based on their `real_food_affinity` level.
-1. Display the amount the social network would charge an advertiser to show one advertisement to two thousand users with a `real_food_affinity` level of `0.5`.
-1. Show all the users for whom the `luxury_brand_affinity_category_id` field contains an invalid foreign key.
+1. Display the state name, the number of users in that state, and the average `travel_affinity_category_id` for each of the states for which we have users.
+1. Display only the handles and last names of all users residing in Pittsburgh, Pennsylvania.
+1. Display the email addresses of all users residing in Pittsburgh, Pennsylvania, along with the price the social network would charge an advertiser to show one advertisement to each of them, based on their `travel_affinity` level.
+1. Display the amount the social network would charge an advertiser to show two advertisement to three thousand users with a `real_food_affinity` level of `0.75`.
+1. Show all the users for whom the `tech_gadget_affinity_category_id` field contains an invalid foreign key.
 1. Write an additional SQL query of your choice using SQL with this table; then describe the results
    - e.g. "This query identifies all of the users with the first name Valerye in Idaho who have a strong affinity for both luxury brands and real food."
 
@@ -175,3 +175,19 @@ Answer the following questions, and enter your responses into the `README.md` fi
 1. Is the data in `affinity_categories.csv` in fourth normal form? Again, answer based only on those fields described in the discussion of the data above. Ignore the others.
 1. Explain why or why not the `affinity_categories.csv` data meets 4NF.
 1. Use [draw.io](https://draw.io) to draw an Entity-Relationship Diagram showing a 4NF-compliant form of this data, including primary key field(s), relationship(s), and cardinality. Again, focus on and diagram only the attributes described in the discussion of data above. Ignore the others. Export the diagram as an `.svg` file into the `images` directory.
+
+## Entering respones into the README file
+
+The instructions ask you to enter some responses to specific questions into the [README.md](../README.md) file.
+
+- A placeholder **code block** is given for each question where you must enter your responses, e.g.
+  ![Rendered Markdown code block](../images/markdown_code_block_rendered.png)
+
+- In the raw Markdown code, this code block looks something like this:
+
+![Raw Markdown code block](../images/markdown_code_block_raw.png)
+
+- You _must_ enter your response within the code block.
+  ![Raw Markdown code block](../images/markdown_code_block_filled.png)
+
+- Do not modify anything outside of the code blocks.

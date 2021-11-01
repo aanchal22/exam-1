@@ -3,6 +3,7 @@
 ## import the csv module
 import csv
 
+
 def get_csv_data(filepath):
     """
     Opens the file at filepath, reads the data using the csv module's DictReader, 
@@ -12,30 +13,31 @@ def get_csv_data(filepath):
     :param filepath: The file path of the CSV data file to open
     :returns: A list of dictionaries, where each dictionary represents one row from the file
     """
+    ## place your code here to complete this method according to the instructions above
 
-def remove_rows_with_blank_fields(data):
+def remove_rows_with_null_valued_fields(data):
     """
-    Removes any rows with one or more blank fields from the data set.
+    Removes any rows with one or more fields set to 'NULL' (string format) from the data set.
 
     :param data: The data, as a list of dictionaries
     :returns: The modified data, as a list of dictionaries
     """
     ## place your code here to complete this method according to the instructions above
 
-def remove_rows_with_state(data, state):
+def remove_rows_with_invalid_handles(data):
     """
-    Removes any rows with the given value in the 'state' field.
+    Removes any rows that have handles containing special (non-alphanumeric) characters such as ('$', '*', etc.). 
+    Handles can only have alphabets or numbers.
 
     :param data: The data, as a list of dictionaries
-    :param state: The state value of interest, e.g 'United Kingdom' 
     :returns: The modified data, as a list of dictionaries
     """
     ## place your code here to complete this method according to the instructions above
 
 
-def remove_rows_under_affinity_id_level(data, affinity_type, threshold):
+def remove_rows_over_affinity_id_level(data, affinity_type, threshold):
     """
-    Removes any rows with a value in a given affinity category id field lower than the supplied threshold.
+    Removes any rows with a value in a given affinity category id field greater than to the supplied threshold.
 
     :param data: The data, as a list of dictionaries
     :param affinity_type: The type of affinity category id of interest...
@@ -56,7 +58,6 @@ def replace_email_domain(data, old_domain, new_domain):
     """
     ## place your code here to complete this method according to the instructions above
 
-
 def save_csv_data(data, filepath):
     """
     Saves the data into the specified file.  Include the field headers as the first row.
@@ -67,15 +68,16 @@ def save_csv_data(data, filepath):
     ## place your code here to complete this method according to the instructions above
 
 
-def get_average_affinity_id(data, affinity_type):
+def get_average_and_median_affinity_id(data, affinity_type):
     """
-    Calculates the average affinity category id of all records in the data set.
+    Calculates the average and median number of the affinity category id of all records in the data set.
 
     :param data: The data, as a list of dictionaries
     :param affinity_type: The type of affinity category id of interest...
-    :returns: The average affinity id for the given affinity_type
+    :returns: The average and median number of affinity id for the given affinity_type (both are of type float) in the order << average, median >>
     """
     ## place your code here to complete this method according to the instructions above
+
 
 
 #################################################
@@ -89,19 +91,19 @@ def main():
 
     # get the data from the file
     data = get_csv_data('data/users.csv')
-    
-    # munge it
-    data = remove_rows_with_blank_fields(data)
-    data = remove_rows_with_state(data, 'United Kingdom')
-    data = remove_rows_under_affinity_id_level(data, 'real_food_affinity_category_id', 2)
-    data = replace_email_domain(data, '@dmoz.org', '@dmoz.com')
 
-    # dave to the new csv file
+    # munge it
+    data = remove_rows_with_null_valued_fields(data)
+    data = remove_rows_with_invalid_handles(data)
+    data = remove_rows_over_affinity_id_level(data, 'tech_gadget_affinity_category_id', 10)
+    data = replace_email_domain(data, '@amazon.de', '@amazon.com')
+    # save to the new csv file
     save_csv_data(data, 'data/users_clean.csv')
 
-    # print the average affinity level for real food
-    avg = get_average_affinity_id(data, 'real_food_affinity_category_id')
-    print( 'The average affinity id for real food is: {}.'.format(avg) ) # format string nicely
+    # print the average and median affinity level for real food
+    avg, median = get_average_and_median_affinity_id(data, 'tech_gadget_affinity_category_id')
+    print('The average affinity id for tech gadget is: {}.'.format(avg))
+    print('The median affinity id for tech gadget is: {}.'.format(median))
 
 if __name__ == "__main__":
     main()
