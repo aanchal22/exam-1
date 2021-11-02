@@ -80,7 +80,7 @@ Place your query here.
 Place your query here.
 ```
 
-5. Display the email addresses only of all users residing in Pittsburgh, Pennsylvania.
+5. Display only the handles and last names of all users residing in Pittsburgh, Pennsylvania.
 
 ```sql
 Place your query here.
