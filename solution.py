@@ -96,7 +96,7 @@ def main():
     data = remove_rows_with_null_valued_fields(data)
     data = remove_rows_with_invalid_handles(data)
     data = remove_rows_over_affinity_id_level(data, 'tech_gadget_affinity_category_id', 10)
-    data = replace_email_domain(data, '@amazon.de', '@amazon.com')
+    data = replace_email_domain(data, '@dmoz.org', '@dmoz.com')
     # save to the new csv file
     save_csv_data(data, 'data/users_clean.csv')
 
