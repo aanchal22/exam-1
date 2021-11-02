@@ -41,7 +41,7 @@ def remove_rows_over_affinity_id_level(data, affinity_type, threshold):
 
     :param data: The data, as a list of dictionaries
     :param affinity_type: The type of affinity category id of interest...
-    :param threshold: The maximum acceptable id value for this affinity type... records with lower values will be removed.
+    :param threshold: The maximum acceptable id value for this affinity type... records with higher values will be removed.
     :returns: The modified data, as a list of dictionaries
     """
     ## place your code here to complete this method according to the instructions above
