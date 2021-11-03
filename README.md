@@ -26,19 +26,19 @@ Place your formula here.
 2. Number of users in each of the states in the Pacific sub-region, which includes Alaska, California, Hawaii, Oregon and Washington.
 
 ```
-Place your formula here.
+Place your formulas here - one on each line.
 ```
 
 3. Number of users in each of the given 5 cities of the USA: Nashville, Tennessee; San Diego, California; New York City, New York; Dallas, Texas; and Seattle, Washington.
 
 ```
-Place your formula here.
+Place your formulas here - one on each line.
 ```
 
 4. The average affinity category IDs of all users in New York for each of the content types.
 
 ```
-Place your formula here.
+Place your formulas here - one on each line.
 ```
 
 ### SQL queries
