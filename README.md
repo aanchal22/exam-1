@@ -25,19 +25,19 @@ Place your formula here.
 2. Number of users in each of the states in the New England region.
 
 ```
-Place your formula here.
+Place your formulas here - one on each line.
 ```
 
 3. Number of users in each of the 5 most populous cities of the USA.
 
 ```
-Place your formula here.
+Place your formulas here - one on each line.
 ```
 
 4. The average affinity category IDs of all users in New York for each of the content types.
 
 ```
-Place your formula here.
+Place your formulas here - one on each line.
 ```
 
 ### SQL queries
