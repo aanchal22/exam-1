@@ -23,13 +23,13 @@ Place your formula here.
 2. Number of free Wi-Fi hotspots in each of the 5 boroughs of NYC.
 
 ```
-Place your formula here.
+Place your formula here - one on each line.
 ```
 
 3. Number of free Wi-Fi hotspots provided by the Brooklyn Public Library in each of the zip codes of Brooklyn.
 
 ```
-Place your formula for just the zip code 11201 here.
+Place your formulas here - one on each line.
 ```
 
 4. The percent of all hotspots in Brooklyn that are provided by the Brooklyn Public Library.
